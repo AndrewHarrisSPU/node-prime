@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Express Demo</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container text-center">	
+	<h1>Pollard's Rho</h1>
+		<img style="max-width: 20ch;" class="center-block" src="rho.jpg"/></div>
+	</div>
+	<div class="container text-left">
+		<ul>
+			<li>This is a not-very-sophisticated implementation of <a href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm">Pollard's Rho</a></li>
+			<li>Pollard's Rho can be low time complexity, and very low space complexity</li>
+			<li>(No guarantees about complexity with this code...)</li>
+			<li>I can't guarantee handling 'perfect powers' well</li>
+			<ul>
+				<li>It's more probabilistic on those. An efficient algorithm here does exist</li>
+				<li>Said algorithm is for perfect power detection / factoring, but beyond:</li>
+				<ul>
+					<li>My scope</li>
+					<li>I believe, JavaScripts's Math library</li>
+				</ul>
+			</ul>
+			<li>Maximum N is 9007199254740991 - JavaScript has a finite integer representation</li>
+			<li>(To clarify: there is BigNum in recent js; however, a brief implementation with BigNum was failing on stack overflows for me.)</li>
+		</ul>
+	</div>
+	<div class="container">
+		<form action="checkprime" method="GET">
+			<div class="form-group">
+				<label for="N">N:</label>
+				<input type="number" min="2" max="9007199254740991" class="form-control" id="N" name="N">
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
